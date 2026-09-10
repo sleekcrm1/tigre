@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import { Award } from 'lucide-react';
 
 export default function MestreTiger() {
@@ -48,14 +49,17 @@ export default function MestreTiger() {
           </motion.div>
 
           <motion.div
-            className="bg-gradient-to-br from-capoeira-red to-capoeira-gold p-8 rounded-lg"
+            className="relative h-96 w-full"
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8 }}
           >
-            <div className="bg-gray-800 h-96 rounded flex items-center justify-center">
-              <p className="text-gray-400">Mestre Tigre Teaching</p>
-            </div>
+            <Image
+              src="https://www-static.capoeirabelgique.be/wp-content/uploads/2022/10/Capoeira_pm-64-IMG_0600-Grand-940x627.jpeg"
+              alt="Mestre Tigre teaching"
+              fill
+              className="object-cover rounded-lg"
+            />
           </motion.div>
         </motion.div>
       </div>

@@ -1,7 +1,5 @@
 import { notFound } from 'next/navigation';
-
 const locales = ['fr', 'en', 'pt'];
-
 export function getMessages(locale: string) {
   try {
     return require(`../messages/${locale}.json`);
@@ -9,9 +7,4 @@ export function getMessages(locale: string) {
     notFound();
   }
 }
-
-export default {
-  locales,
-  defaultLocale: 'fr',
-  localePrefix: 'as-needed',
-};
+export default { locales, defaultLocale: 'fr', localePrefix: 'as-needed' };

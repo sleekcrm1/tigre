@@ -1,18 +1,27 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { useTranslations } from 'next-intl';
+import Image from 'next/image';
 
 export default function Hero() {
-  const t = useTranslations();
-
   return (
     <section className="relative h-screen bg-gradient-to-br from-capoeira-red to-capoeira-dark flex items-center justify-center overflow-hidden">
-      <div className="absolute inset-0 opacity-20">
-        <div className="absolute top-10 right-10 w-72 h-72 bg-capoeira-gold rounded-full blur-3xl"></div>
-        <div className="absolute bottom-10 left-10 w-72 h-72 bg-brazil-green rounded-full blur-3xl"></div>
+      {/* Background image with overlay */}
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="https://www-static.capoeirabelgique.be/wp-content/uploads/2022/10/Capoeira_matin-148-_68A8941-Grand-edited.jpeg"
+          alt="Capoeira students"
+          fill
+          className="object-cover opacity-40"
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-capoeira-red/80 to-capoeira-dark/80"></div>
       </div>
 
+      {/* Decorative circles */}
+      <div className="absolute top-10 right-10 w-72 h-72 bg-capoeira-gold rounded-full blur-3xl opacity-20 z-0"></div>
+      <div className="absolute bottom-10 left-10 w-72 h-72 bg-brazil-green rounded-full blur-3xl opacity-20 z-0"></div>
+
+      {/* Content */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
