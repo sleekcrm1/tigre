@@ -23,13 +23,13 @@ jobs:
       - name: Build And Deploy
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
-        with:
-        azure_static_web_apps_api_token: ${{ secrets.SWA_TOKEN }}
-        repo_token: ${{ secrets.GITHUB_TOKEN }}
-          action: "upload"
-          app_location: "/"
-          api_location: ""
-          output_location: ""
+with:
+      azure_static_web_apps_api_token: ${{ secrets.SWA_TOKEN }}
+      repo_token: ${{ secrets.GITHUB_TOKEN }}
+      action: "upload"
+      app_location: "/"
+      api_location: ""
+      output_location: ""
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
