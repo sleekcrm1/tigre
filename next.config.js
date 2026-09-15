@@ -8,3 +8,9 @@ module.exports = withNextIntl({
     ],
   },
 });
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  output: 'standalone',
+  // ... your other config parameters
+};
+module.exports = nextConfig;
